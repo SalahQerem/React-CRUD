@@ -14,6 +14,7 @@ function Details() {
     const getUser = async() => {
         const {data} = await axios.get(`https://crud-users-gold.vercel.app/users/${id}`);
         setUser(data.user);
+        console.log(data);
     }
 
   return (

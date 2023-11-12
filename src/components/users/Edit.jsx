@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -26,6 +26,15 @@ function Create() {
   let [backError, setBackError] = useState('');
 
   let [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    getUser();
+  }, [])
+
+  const getUser = async() => {
+      const {data} = await axios.get(`https://crud-users-gold.vercel.app/users/${id}`);
+      setUser(data.user);
+  }
 
   const changeData = (e) => {
     setUser({  

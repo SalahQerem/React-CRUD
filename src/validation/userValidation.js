@@ -1,22 +1,23 @@
-export const userDataValidation = (values) => {
+export const userDataValidation = (user) =>{
+
     let errors = {};
 
-    if(values.name.trim() == ""){
-        errors.name = "username is required";
-    }else if(values.name.trim().length < 4){
-        errors.name = "username must be at least 4 characters";
+    if(user.name.trim() == ""){
+        errors.name = "Username is required";
+    }else if (user.name.trim() < 4){
+        errors.name = "Username must be at least 4 characters"; 
     }
 
-    if(values.email.trim() == ""){
-        errors.email = "email is required";
-    }else if(values.email.trim().length < 9){
-        errors.email = "email must be at least 9 characters";
+    if(user.email.trim() == ""){
+        errors.email = "Email is required";
+    }else if (user.email.trim() < 9){
+        errors.email = "Email must be at least 9 characters"; 
     }
 
-    if(values.password.trim() == ""){
-        errors.password = "password is required";
-    }else if(values.password.trim().length < 4){
-        errors.password = "password must be at least 4 characters";
+    if(user.password.trim() == ""){
+        errors.password = "Password is required";
+    }else if (user.password.trim() < 4){
+        errors.password = "Password must be at least 4 characters"; 
     }
 
     return errors;

@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 function Details() {
-    
+
     let [user, setUser] = useState({});
     const {id} = useParams('id');
-    
+
     useEffect(() => {
         getUser();
     }, [])
@@ -14,11 +14,10 @@ function Details() {
     const getUser = async() => {
         const {data} = await axios.get(`https://crud-users-gold.vercel.app/users/${id}`);
         setUser(data.user);
-        console.log(data);
     }
 
   return (
-    <div className="container-fluid">
+        <div className="container-fluid">
         <div className="row flex-nowrap">
         <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
         <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">

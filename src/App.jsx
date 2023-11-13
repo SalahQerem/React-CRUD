@@ -1,20 +1,24 @@
 import './App.css'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle'
+import Create from './components/user/create.jsx'
+import Index from './components/user/index.jsx'
 import { Route, Routes } from 'react-router-dom'
-import Create from './components/users/Create.jsx'
-import Index from './components/users/Index.jsx'
-import Details from './components/users/Details.jsx'
-import Edit from './components/users/Edit.jsx'
+import Details from './components/user/Details.jsx'
+import Edit from './components/user/Edit.jsx'
+import Home from './components/user/Home.jsx'
+
+
 
 function App() {
-
   return (
     <Routes>
-      <Route path='/' element={<h2>Home</h2>}/>
-      <Route path='/create' element={<Create />}/>
-      <Route path='/index' element={<Index />}/>
-      <Route path='/:id' element={<Details />}/>
-      <Route path='/edit/:id' element={<Edit />}/>
-      <Route path='*' element={<h2>Page Not Founded</h2>} />
+      <Route path='/' element = {<Home />}/>
+      <Route path = '/create' element = {<Create />} />
+      <Route path = '/index' element = {<Index />} />
+      <Route path='/:id' element = {<Details />}></Route>
+      <Route path='/edit/:id' element = {<Edit />}></Route>
+      <Route path = '*' element = {<p>Page Not Found</p>}></Route>
     </Routes>
   )
 }

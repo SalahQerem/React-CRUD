@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom'
 
-function Loader() {
+function Home() {
   return (
     <>
       <div className="container-fluid">
@@ -179,7 +179,7 @@ function Loader() {
           </div>
           <div className="col py-3">
             <div className="d-flex justify-content-center align-items-center vh-100">
-              <div className="spinner-border" role="status"></div>
+                <h1>Home</h1>
             </div>
           </div>
         </div>
@@ -188,4 +188,4 @@ function Loader() {
   );
 }
 
-export default Loader;
+export default Home;

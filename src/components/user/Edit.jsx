@@ -156,7 +156,7 @@ function create() {
                     <Input errors={errors} type="text" text="Username" id="username" name="name" value={user.name} changeData={changeData} />
                     <Input errors={errors} type="email" text="Email" id="email" name="email" value={user.email} changeData={changeData} />
                     <Input errors={errors} type="password" text="Password" id="password" name="password" value={user.password} changeData={changeData} />
-                    <button type="submit" className="btn btn-primary">Add User</button>
+                    <button type="submit" className="btn btn-primary">Edit User</button>
                 </form>
             </div>
         </div>    

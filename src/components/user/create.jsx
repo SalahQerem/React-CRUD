@@ -5,6 +5,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { userDataValidation } from '../../validation/userValidation.js'
 import Loader from '../Loader.jsx';
+import inputs from '../../shared/inputConfigs.js'
 
 function create() {
 
@@ -53,7 +54,6 @@ function create() {
     if(loading){
         return(<Loader />);
     }
-
 
   return (
     <div className="container-fluid">
@@ -141,9 +141,9 @@ function create() {
             <div className="col py-3">
             {backError && <p className='text-danger'>{backError}</p>}
                 <form onSubmit={sendUser}>
-                    <Input errors={errors} type="text" text="Username" id="username" name="name" value={user.name} changeData={changeData} />
-                    <Input errors={errors} type="email" text="Email" id="email" name="email" value={user.email} changeData={changeData} />
-                    <Input errors={errors} type="password" text="Password" id="password" name="password" value={user.password} changeData={changeData} />
+                    {inputs.map((input) => 
+                    <Input id={input.id} name={input.name} type={input.type} text={input.text} value={input.value} errors={errors} changeData={changeData}/> )
+                    }
                     <button type="submit" className="btn btn-primary">Add User</button>
                 </form>
             </div>
